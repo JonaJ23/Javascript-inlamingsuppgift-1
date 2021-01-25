@@ -9,19 +9,12 @@ body {
 
 .title {
     display: flex;
-    flex-direction: column;
     justify-content:space-evenly;
     text-align: center;
 }
 
 .title > div {
     padding: 0.2in;
-}
-
-
-.post-col {
-    flex-direction: column;
-    margin-left: 850px;
 }
 
 

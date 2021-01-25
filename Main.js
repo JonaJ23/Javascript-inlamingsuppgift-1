@@ -1,35 +1,24 @@
-window.onload = function() {
-    document.getElementById("input-number").oninput = function (){
-        removeAllSections();
+function NewPost() {
 
-        var count = parseInt(this.value);
-        for(var i = 0; i < count; i++){
+    var parent = document.querySelector("main");
 
-            var parent = document.querySelector("main");
+    var child = document.createElement("section");
+    var title = document.createElement("h4");
+    var desc = document.createElement("p");
+    var btn = document.createElement("button");
 
-            var child = document.createElement("section");
-            var title = document.createElement("h4");
-            var blurb = document.createElement("p");
+    title.innerHTML = "Untitled";
+    desc.innerHTML = "...";
+    btn.innerHTML = "Delete";
 
-            title.innerHTML = "Title " + i;
-            blurb.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore harum, quasi dicta ex totam quisquam quo tempore maxime, commodi praesentium eius quod suscipit! Tenetur magnam eligendi amet fugiat adipisci impedit.";
-            
-            makeEditable(title);
-            makeEditable(blurb);
+    makeEditable(title);
+    makeEditable(desc);
 
-            child.appendChild(title);
-            child.appendChild(blurb);
-            parent.appendChild(child);
-        }
-    }
+    child.appendChild(title);
+    child.appendChild(desc);
+    child.appendChild(btn);
+    parent.appendChild(child);
 
-}
-
-function removeAllSections(){
-    var test_sections = document.querySelectorAll("section");
-    for(var i = 0; i < test_sections.length; i++){
-        test_sections[i].remove();
-    }
 }
 
 function makeEditable(elem){
@@ -40,4 +29,8 @@ function makeEditable(elem){
     elem.onblur = function(){
         elem.contentEditable = false;
     }
+}
+
+function DeletePost() {
+
 }
