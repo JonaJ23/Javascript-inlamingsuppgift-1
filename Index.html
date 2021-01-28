@@ -5,31 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="Main.js"></script>
-    <title>Jonatan's Funny Blog</title>
+    <title>Jonatan's Wacky Blog</title>
 </head>
 <body>
 
     <!--Header-->
-    <header class="title">
+    <header class="header">
         <div>
-            <h1>Jonatan's Funny Blog</h1>
+            <h1>Jonatan's Wacky Blog</h1>
         </div>
         <div class="Post-button" style="width: 2.0in;">
             <label for="New-Post">Create New Post: </label>
-            <button id="New-Post" type="button" onclick="NewPost()">New Post</button>
+            <button id="New-Post" class="btn-style" type="button" onclick="NewPost()">New Post</button>
         </div>
     </header>
-    <main>
-        <section>
-            <h4>My first post!</h4>
-            <p>Hello everyone! This is my first post.</p>
-            <button id="Delete-Post" type="button" onclick="DeletePost()">Delete</button>
-        </section>
-    </main>
+    <!--Text-box-->
+    <form action="/Main.js">
+        <div id="box-id" class="text-container"></div>
+    </form>
 <br>
     <!--Footer-->
-    <footer>Copyright © Jonatan's Funny Blog</footer>
-
+    <footer>Copyright © Jonatan's Wacky Blog</footer>
 </body>
 </html>
 
