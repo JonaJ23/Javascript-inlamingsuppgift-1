@@ -1,19 +1,32 @@
+/* Hur jag debuggade javascript-koden:
+jag började med att lägga till en debugger i koden, sedan öppnade jag min webbplats inne i Chromes webbläsare 
+och gick in på Console genom att trycka på F12. Där kunde jag steppa under varje kodrad där debuggern låg för att upptäcka potentiella fel och buggar. 
+Det största problemet jag fått hålla på att lösa är att göra hemsidan responsiv till att skapa nya blogginlägg. Oftast slutade det att funka
+med att skapa nya inlägg när jag la till en ny funktion för blogginläggen p.g.a. dålig koll med vad varför funktionen inte accepterade nyare kod och 
+dumt nog så använde jag inte debugging i början, utan fastnade nästan med samma problem hela dan utan att tänka på hitta fel med en debugger. */
 
-let elementCreateId = 0;
-function NewPost(){
 
+
+let elementCreateId = 0; // Deklarerar en variabel för ett index-värde när nytt blogginlägg skapas.
+
+function NewPost(){ // Detta är JS-funktionen för HTML-knappen och som skapar ett event för nya blogginlägg. Nya inlägg sorteras nedanför inuti "containers".
+    
     elementCreateId++;
+    debugger;
 
+    // Här deklareras variabeln "div" för att ge blogginläggen en sektion att hamna i. Varje inlägg får också ett eget id med hjälp variabeln elementCreateId.
     let div = document.createElement("div");
     div.id = "div" + elementCreateId;
-    var parent = document.getElementById("box-id");
+
+    // Deklarerar variabeln parent och använder ett id från "container" i HTML-koden för att skapa själva "innehållet" till blogginlägget, parent lägger sedan "div" som child-element.
+    var parent = document.getElementById("container"); 
     parent.appendChild(div);
   
-  
-    let title = document.createElement("Input");
+    // "Input" skapas som ett element för att kunna redigera titeln och ger den ett id-nummer. 
+    let title = document.createElement("input");
     title.setAttribute('maxLength', 30);
     title.type = "text";
-    title.value = "New Title " + (elementCreateId-1);
+    title.placeholder = "New Title " + (elementCreateId-1);
     title.className = "titleClass";
     title.id = "titleId";
 
@@ -21,18 +34,18 @@ function NewPost(){
     parent.appendChild(title);
 
 
-
+    // Här skapas element för inläggets nedre textruta med hjälp av "textarea" och läggs sedan i rätt "div" som child-element. 
     let Text = document.createElement("textarea");
     Text.setAttribute('maxlength', 400);
     Text.type = "text";
-    Text.value = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore harum, quasi dicta ex totam quisquam quo tempore maxime, commodi praesentium eius quod suscipit! Tenetur magnam eligendi amet fugiat adipisci impedit.";
+    Text.placeholder = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore harum, quasi dicta ex totam quisquam quo tempore maxime, commodi praesentium eius quod suscipit! Tenetur magnam eligendi amet fugiat adipisci impedit.";
     Text.className = "textClass";
     Text.id = "TextId";
 
     var parent = document.getElementById("div" + elementCreateId);
     parent.appendChild(Text);
-}
 
+}
 
 
 
