@@ -9,7 +9,11 @@ dumt nog så använde jag inte debugging i början, utan fastnade nästan med sa
 
 let elementCreateId = 0; // Deklarerar en variabel för ett index-värde när nytt blogginlägg skapas.
 
-function NewPost(){ // Detta är JS-funktionen för HTML-knappen och som skapar ett event för nya blogginlägg. Nya inlägg sorteras nedanför inuti "containers".
+function NewPost(){ /* Detta är JS-funktionen för HTML-knappen och som skapar ett event för nya blogginlägg. 
+När jag klickar på knappen så aktiveras denna funktion och börjar först med att addera ett nytt id-nummer för det nya inlägget. 
+Sedan vill jag att den ska hämta det befintliga elementet "div" från HTML genom att få tag på själva Id-namnet. Detta element ska utgöra "området" 
+för inläggets position samt skapa placering för en ny titel- och beskrivningsruta med hjälp av nya element i eventet. För att också ha en maxlängd på hur 
+lång texten får skrivas sätts ett värde med en setAttribute på både titeln och beskrivningstexten. */
     
     elementCreateId++;
     debugger;
